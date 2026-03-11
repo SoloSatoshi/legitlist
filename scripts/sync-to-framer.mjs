@@ -88,24 +88,20 @@ async function main() {
 
   try {
     // ── Get or create the Managed Collection ──────────────────────────────
-    let collection
-    try {
-      collection = await framer.getManagedCollection()
-      console.log(`✅ Found existing collection: "${COLLECTION_NAME}"`)
-    } catch {
-      try {
-        console.log(`🆕 Collection not found — creating "${COLLECTION_NAME}"…`)
-        collection = await framer.createManagedCollection(COLLECTION_NAME)
-      } catch (createErr) {
-        if (createErr.message?.includes("already exists")) {
-          // Collection was created by a previous run but getManagedCollection()
-          // lost the association — re-fetch it
-          console.log(`✅ Collection already exists — re-fetching…`)
-          collection = await framer.getManagedCollection()
-        } else {
-          throw createErr
-        }
-      }
+    // getManagedCollection() (singular) relies on "active" session state that
+    // is unreliable in server-side / CI runs. Use getManagedCollections()
+    // (plural) to list all managed collections in the project and find ours
+    // by name — this is always reliable regardless of session history.
+    console.log("🔍 Listing managed collections in project…")
+    const allCollections = await framer.getManagedCollections()
+    let collection = allCollections.find((c) => c.name === COLLECTION_NAME)
+
+    if (collection) {
+      console.log(`✅ Found existing collection: "${COLLECTION_NAME}" (id: ${collection.id})`)
+    } else {
+      console.log(`🆕 Collection "${COLLECTION_NAME}" not found — creating…`)
+      collection = await framer.createManagedCollection(COLLECTION_NAME)
+      console.log(`✅ Created collection: "${COLLECTION_NAME}" (id: ${collection.id})`)
     }
 
     // ── Sync field schema ──────────────────────────────────────────────────
