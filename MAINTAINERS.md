@@ -20,10 +20,10 @@ PR merged → GitHub Action triggers → Vendor data synced to Framer → Site d
 legitlist/
 ├── vendors/
 │   ├── _schema.json          # JSON Schema — all vendor files must pass this
-│   ├── _example.json         # Template (active: false, skipped by sync)
+│   ├── _example.json         # Template — skipped by sync (filename starts with _)
 │   └── {slug}.json           # One file per vendor
 ├── logos/
-│   └── {slug}.png            # Square, max 200 KB
+│   └── {slug}.{ext}          # Square, max 200 KB — png, jpg, webp
 ├── scripts/
 │   ├── sync-to-framer.mjs    # Syncs vendors to Framer CMS on merge
 │   └── validate-all.mjs      # Local validation script
@@ -62,7 +62,7 @@ This creates the Managed Collection in Framer with all fields. Only needs to be 
 ## ➕ Adding or updating a vendor
 
 1. Create `vendors/{slug}.json` — copy from `vendors/_example.json`
-2. Add logo at `logos/{slug}.png` (square, max 200 KB)
+2. Add logo at `logos/{slug}.{ext}` (square, max 200 KB — png, jpg, webp)
 3. Open a PR — CI validates automatically
 4. Merge → sync and deploy run automatically
 

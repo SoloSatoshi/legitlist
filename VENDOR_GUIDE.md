@@ -42,7 +42,7 @@ Copy `vendors/_example.json` and fill it in:
   "website": "https://yourshop.com",
   "region": "North America",
   "country": "USA",
-  "logo": "logos/your-shop-name.png",
+  "logo": "logos/your-shop-name.png",   ← match your slug and actual filename
   "description": "Tell miners who you are — what you sell, where you ship, how long you've been at it. Keep it under 280 characters.",
   "active": true,
   "social": {
@@ -62,7 +62,7 @@ Valid regions: `Europe` · `North America` · `South America` · `Asia Pacific` 
 
 **`logos/{your-slug}.png`**
 
-Square, **100×100px minimum**. PNG, JPG, WEBP, or SVG. Max **200 KB**.
+Square. PNG, JPG, or WebP. Max **200 KB**.
 
 No logo yet? Submit your PR anyway — a placeholder will be shown until you add one.
 
