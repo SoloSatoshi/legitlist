@@ -29,14 +29,8 @@ Open this page directly:
 
 **https://github.com/bitaxeorg/legitlist/fork**
 
-Visual path on GitHub:
-1. Open `github.com/bitaxeorg/legitlist`
-2. Top-right, click **Fork**
-3. Click **Create fork**
-
 Quick answers:
 - **Do I need to rename the fork?** No — keep the default name.
-- **Can I duplicate `vendors/_example.json` from GitHub UI?** Not directly. Create a new file and paste the template below.
 
 ### 2. Add your two files
 
