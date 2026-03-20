@@ -68,6 +68,25 @@ This creates the Managed Collection in Framer with all fields. Only needs to be 
 
 ---
 
+## Vendor review checklist
+
+Before merging a vendor PR, confirm:
+
+- The vendor sells genuine Bitaxe hardware and is not misrepresenting clones or counterfeit products
+- The shop is live and active
+- The vendor is reachable in public community channels
+- There are no unresolved fraud or counterfeit reports
+- `Bitaxe` is spelled correctly across the shop page and materials
+- Product photos appear real and specific to the seller
+- Each Bitaxe product page links to `https://bitaxe.org`
+- No Bitaxe-derived products are being sold in violation of Bitaxe open-source license terms
+
+Selling closed-source miners is acceptable if they are not Bitaxe derivatives sold in violation of Bitaxe open-source license terms.
+
+If there is uncertainty, leave the PR open and ask for clarification before merging.
+
+---
+
 ## 🗑️ Removing a vendor
 
 **Soft remove** — set `"active": false` in the JSON. File stays in repo, vendor remains in Framer CMS, and the site should hide it by filtering `vendorActive = "true"` only.

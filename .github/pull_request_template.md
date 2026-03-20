@@ -26,11 +26,17 @@ _Replace the example values below with your real details._
 
 _Use Yes/No for each line. Keep the text and just replace the value._
 
+These confirmations are reviewed manually by maintainers and the community.
+
 | | |
 |---|---|
 | I sell genuine Bitaxe hardware | Yes |
 | My shop is live and active | Yes |
 | I am reachable in the community | Yes |
+| I use the correct name `Bitaxe` on my Bitaxe product pages | Yes |
+| My Bitaxe product pages use real product photos | Yes |
+| My Bitaxe product pages link to `https://bitaxe.org` | Yes |
+| I do not sell Bitaxe-derived products in ways that violate Bitaxe open-source license terms | Yes |
 | I am not aware of open fraud or counterfeit reports about my shop | Yes |
 | I understand listings can be removed if confirmed issues arise | Yes |
 
